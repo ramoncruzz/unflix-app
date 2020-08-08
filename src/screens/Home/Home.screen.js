@@ -3,13 +3,13 @@ import { SafeAreaView, Text, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LottieView from 'lottie-react-native';
 
-import { trends } from '../../services/Themoviedb.api';
+import { movieDetail } from '../../services/Themoviedb.api';
 
 const loadding = require('../../../lottiefiles/world.json');
 
 const Home = () => {
   useEffect(() => {
-    trends()
+    movieDetail(76341)
       .then((response) => {
         debugger;
       })
