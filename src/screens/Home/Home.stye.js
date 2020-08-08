@@ -3,7 +3,7 @@ import { SafeAreaView, Text, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LottieView from 'lottie-react-native';
 
-const loadding = require('./lottiefiles/world.json');
+const loadding = require('../../../lottiefiles/world.json');
 
 const App = () => (
   <SafeAreaView
