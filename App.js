@@ -1,14 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import { SafeAreaView, Text, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import LottieView from 'lottie-react-native';
+
+const loadding = require('./lottiefiles/world.json');
 
 const App = () => (
   <SafeAreaView
@@ -29,6 +24,7 @@ const App = () => (
       Aplicativo de filmes
     </Text>
     <Icon name="rocket" size={30} color="#900" />
+    <LottieView source={loadding} autoPlay loop={false} />
   </SafeAreaView>
 );
 export default App;
