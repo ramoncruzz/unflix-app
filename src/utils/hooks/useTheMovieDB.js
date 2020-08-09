@@ -9,6 +9,8 @@ import {
 
 const useTheMovieDB = () => {
   const [moviesList, setMoviesList] = useState([]);
+  const [moviesByGenre, setMoviesByGenre] = useState([]);
+  const [genreList, setGenreList] = useState([]);
   const [termSearch, setTermSearch] = useState(null);
   const [searchResult, setSearchResult] = useState([]);
   const [trendsOfWeek, setTrendOfWeek] = useState([]);
@@ -23,6 +25,26 @@ const useTheMovieDB = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-underscore-dangle
+    const _moviesByGenre = [];
+    genreList.forEach((genreItem) => {
+      const { id, name } = genreItem;
+      const data = moviesList.filter((movie) => {
+        const { genre_ids: genreIds } = movie;
+        return genreIds.some((item) => item === id);
+      });
+      if (data.length > 0) {
+        _moviesByGenre.push({
+          id,
+          title: name,
+          data,
+        });
+      }
+    });
+    setMoviesByGenre(_moviesByGenre);
+  }, [moviesList]);
 
   useEffect(() => {
     searchMovie(termSearch)
@@ -44,6 +66,9 @@ const useTheMovieDB = () => {
     genre()
       .then((_genrer) => {
         const { genres } = _genrer;
+        if (genreList.length <= genres.length) {
+          setGenreList(genres);
+        }
         discover(page)
           .then((_movies) => {
             const {
@@ -83,6 +108,7 @@ const useTheMovieDB = () => {
     trends: trendsOfWeek,
     page,
     searchResult,
+    moviesByGenre,
     setTermSearch,
     setPage,
     setMovieId,

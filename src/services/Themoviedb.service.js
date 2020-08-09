@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Env from './Env';
+import { RNLocale } from '../NativeModules';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const ACCESS_API = `Bearer ${Env.tokenTheMoviedb}`;
@@ -18,9 +19,12 @@ const TheMovieDB = axios.create({
 
 const userLocale = () =>
   new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('pt-BR');
-    }, 100);
+    try {
+      RNLocale.getLocale().then((locale) => resolve(locale));
+    } catch (error) {
+      console.log(error);
+      resolve('pt');
+    }
   });
 
 const interceptorRequest = async (config) => {
