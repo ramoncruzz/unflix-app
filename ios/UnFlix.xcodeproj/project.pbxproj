@@ -22,6 +22,7 @@
 		0F046C3624DEF56D00ED59A4 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F046C2A24DEF56D00ED59A4 /* SourceSansPro-Bold.ttf */; };
 		0F046C3724DEF56D00ED59A4 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F046C2B24DEF56D00ED59A4 /* SourceSansPro-Regular.ttf */; };
 		0F046C5A24DF980B00ED59A4 /* logoVariacao2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F046C5924DF980A00ED59A4 /* logoVariacao2.png */; };
+		0F046C5F24DFA37900ED59A4 /* RNLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F046C5E24DFA37900ED59A4 /* RNLocale.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -73,6 +74,8 @@
 		0F046C2A24DEF56D00ED59A4 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		0F046C2B24DEF56D00ED59A4 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		0F046C5924DF980A00ED59A4 /* logoVariacao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoVariacao2.png; sourceTree = "<group>"; };
+		0F046C5D24DFA37900ED59A4 /* RNLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNLocale.h; sourceTree = "<group>"; };
+		0F046C5E24DFA37900ED59A4 /* RNLocale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNLocale.m; sourceTree = "<group>"; };
 		0F2A1C5ACC5183E02C9C02C6 /* libPods-UnFlix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnFlix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* UnFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = UnFlix/AppDelegate.h; sourceTree = "<group>"; };
@@ -178,9 +181,19 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		0F046C5C24DFA34C00ED59A4 /* NativeModules */ = {
+			isa = PBXGroup;
+			children = (
+				0F046C5D24DFA37900ED59A4 /* RNLocale.h */,
+				0F046C5E24DFA37900ED59A4 /* RNLocale.m */,
+			);
+			name = NativeModules;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* UnFlix */ = {
 			isa = PBXGroup;
 			children = (
+				0F046C5C24DFA34C00ED59A4 /* NativeModules */,
 				0F046C5824DF97F500ED59A4 /* image */,
 				0F046BFD24DEF50700ED59A4 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -705,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				0F046C5F24DFA37900ED59A4 /* RNLocale.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
