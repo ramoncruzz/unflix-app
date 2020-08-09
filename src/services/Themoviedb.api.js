@@ -16,8 +16,12 @@ const discover = (page) =>
           page,
         },
       })
-      .then((movies) => resolve(movies))
-      .catch((error) => reject(error));
+      .then((movies) => {
+        resolve(movies);
+      })
+      .catch((error) => {
+        reject(error);
+      });
   });
 
 const trending = () =>
@@ -36,4 +40,15 @@ const genre = () =>
       .catch((error) => reject(error));
   });
 
-export { movieDetail, discover, trending, genre };
+const searchMovie = (movieName) =>
+  new Promise((resolve, reject) => {
+    service
+      .get('/search/movie', {
+        params: {
+          query: movieName,
+        },
+      })
+      .catch((error) => reject(error));
+  });
+
+export { movieDetail, discover, trending, genre, searchMovie };

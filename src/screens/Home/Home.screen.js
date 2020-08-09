@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView, Text, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LottieView from 'lottie-react-native';
 
-import { movieDetail } from '../../services/Themoviedb.api';
+import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 
 const loadding = require('../../../lottiefiles/world.json');
 
 const Home = () => {
+  const { movies, setPage } = useTheMovieDB();
+
   useEffect(() => {
-    movieDetail(76341)
-      .then((response) => {
-        debugger;
-      })
-      .catch((error) => {
-        debugger;
-      });
+    setPage(2);
   }, []);
+
   return (
     <SafeAreaView
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -35,8 +32,9 @@ const Home = () => {
       <Text style={{ fontFamily: 'SourceSansPro-ExtraLightItalic' }}>
         Aplicativo de filmes
       </Text>
+      <Text> QTD: {movies.length}</Text>
       <Icon name="rocket" size={30} color="#900" />
-      <LottieView source={loadding} autoPlay loop={false} />
+      {/* <LottieView source={loadding} autoPlay loop={false} /> */}
     </SafeAreaView>
   );
 };

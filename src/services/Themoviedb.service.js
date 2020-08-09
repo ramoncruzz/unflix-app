@@ -36,14 +36,11 @@ const interceptorRequest = async (config) => {
     } else {
       config.params = { language: locale };
     }
-
-    config.cancelToken = new CancelToken((value) => {
-      cancel = value;
-    });
+    config.cancelToken = CancelToken.source().token;
     return config;
   } catch (error) {
     console.log(error);
-    return null;
+    throw new Error(error.message);
   }
 };
 const interceptorSuccess = (response) => {
@@ -52,19 +49,11 @@ const interceptorSuccess = (response) => {
     return data;
   } catch (error) {
     console.log(error);
-    return null;
-  }
-};
-const interceptorFail = (response) => {
-  try {
-    const { message } = response;
-    return message;
-  } catch (error) {
-    console.log(error);
+    throw new Error(error.message);
   }
 };
 
 TheMovieDB.interceptors.request.use(interceptorRequest);
-TheMovieDB.interceptors.response.use(interceptorSuccess, interceptorFail);
+TheMovieDB.interceptors.response.use(interceptorSuccess);
 
 export default TheMovieDB;
