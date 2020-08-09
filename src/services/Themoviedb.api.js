@@ -48,6 +48,7 @@ const searchMovie = (movieName) =>
           query: movieName,
         },
       })
+      .then((response) => resolve(response.results))
       .catch((error) => reject(error));
   });
 

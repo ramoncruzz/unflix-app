@@ -8,10 +8,9 @@ import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 const loadding = require('../../../lottiefiles/world.json');
 
 const Home = () => {
-  const { movies, setPage } = useTheMovieDB();
-
+  const { movies, setMovieId, movieDetail, setTermSearch } = useTheMovieDB();
   useEffect(() => {
-    setPage(2);
+    setTermSearch('Barraca');
   }, []);
 
   return (
@@ -33,6 +32,7 @@ const Home = () => {
         Aplicativo de filmes
       </Text>
       <Text> QTD: {movies.length}</Text>
+      <Text>{movieDetail ? movieDetail.original_title : 'vazio'}</Text>
       <Icon name="rocket" size={30} color="#900" />
       {/* <LottieView source={loadding} autoPlay loop={false} /> */}
     </SafeAreaView>

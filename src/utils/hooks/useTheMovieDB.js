@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import {
-  movieDetail,
+  movieDetail as movieDetailEndPoint,
   discover,
   trending,
   genre,
+  searchMovie,
 } from '../../services/Themoviedb.api';
 
 const useTheMovieDB = () => {
   const [moviesList, setMoviesList] = useState([]);
-  const [genresList, setGenresList] = useState([]);
   const [termSearch, setTermSearch] = useState(null);
+  const [searchResult, setSearchResult] = useState([]);
   const [trendsOfWeek, setTrendOfWeek] = useState([]);
-  const [movie, setMovie] = useState(null);
+  const [movieDetail, setMovieDetail] = useState(null);
+  const [movieId, setMovieId] = useState(400160);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -23,10 +25,25 @@ const useTheMovieDB = () => {
   }, []);
 
   useEffect(() => {
+    searchMovie(termSearch)
+      .then((results) => {
+        setSearchResult(results);
+      })
+      .catch((error) => console.log(error));
+  }, [termSearch]);
+
+  useEffect(() => {
+    movieDetailEndPoint(movieId)
+      .then((_movie) => {
+        setMovieDetail(_movie);
+      })
+      .catch((error) => console.log(error));
+  }, [movieId]);
+
+  useEffect(() => {
     genre()
       .then((_genrer) => {
         const { genres } = _genrer;
-        setGenresList(genres);
         discover(page)
           .then((_movies) => {
             const {
@@ -62,11 +79,13 @@ const useTheMovieDB = () => {
 
   return {
     movies: moviesList,
-    movie,
+    movieDetail,
     trends: trendsOfWeek,
     page,
+    searchResult,
     setTermSearch,
     setPage,
+    setMovieId,
   };
 };
 
