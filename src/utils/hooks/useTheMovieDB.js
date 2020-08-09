@@ -40,18 +40,17 @@ const useTheMovieDB = () => {
               return obj;
             }, {});
 
-            const teste = genres;
-            debugger;
             const qtdMoviesExpected = (TotalResults / TotalPages) * page;
             const isListUpdated = moviesList.length < qtdMoviesExpected;
             if (isListUpdated) {
               const newMovies = results.map((item) => {
-                const { genre_ids } = item;
-                const genres = genre_ids.map((genreId) => genreObject[genreId]);
-                debugger;
-                return { ...item, genres };
+                const { genre_ids: genreIds } = item;
+                const innergenre = genreIds.map(
+                  (genreId) => genreObject[genreId] || null
+                );
+                return { ...item, genres: innergenre };
               });
-              setMoviesList((oldState) => oldState.concat(results));
+              setMoviesList((oldState) => oldState.concat(newMovies));
             }
           })
           .catch((error) => {
