@@ -1,16 +1,9 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 import { VideosList } from '../../components';
 
-const Styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#edf6f9',
-  },
-});
+import Styles from './Trends.styles';
 
 const Trends = ({ navigation }) => {
   const { setPageTrends, trendsByGenre } = useTheMovieDB();
@@ -18,7 +11,6 @@ const Trends = ({ navigation }) => {
 
   return (
     <SafeAreaView style={Styles.main}>
-      <Text> tamanho {trendsByGenre.length}</Text>
       <VideosList
         moviesList={trendsByGenre}
         askMoreMovies={askMoreTrends}

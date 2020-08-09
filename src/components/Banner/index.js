@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import Proptypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -46,22 +47,33 @@ const Style = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
+
 const Banner = ({ movie, hideOverview, onPress, children }) => {
-  const [voteAverage] = useState(movie.vote_average);
-  const [title] = useState(movie.title);
-  const [overview] = useState(movie.overview);
+  const [voteAverage, setvoteAvarage] = useState(0);
+  const [title, setTitle] = useState(null);
+  const [overview, setOverview] = useState(null);
   const [hasGoodVotes, setHasGoodVotes] = useState(false);
   const [urlImage, setUrlImage] = useState(null);
 
   const URL = 'https://image.tmdb.org/t/p/w500';
-  useState(() => {
+  useEffect(() => {
     if (voteAverage >= 7) {
       setHasGoodVotes(true);
     }
 
-    const { poster_path: PosterPath } = movie;
-    setUrlImage(`${URL}${PosterPath}`);
-  }, []);
+    if (movie) {
+      const { poster_path: PosterPath } = movie;
+      setUrlImage(`${URL}${PosterPath}`);
+    }
+  }, [movie, voteAverage]);
+
+  useEffect(() => {
+    if (movie) {
+      setTitle(movie.title);
+      setOverview(movie.overview);
+      setvoteAvarage(movie.vote_average);
+    }
+  }, [movie]);
 
   return (
     <View style={Style.main}>
@@ -89,7 +101,7 @@ const Banner = ({ movie, hideOverview, onPress, children }) => {
               {overview}
             </Text>
           )}
-          {children}
+          <ScrollView>{children}</ScrollView>
         </View>
       </TouchableOpacity>
     </View>

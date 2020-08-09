@@ -17,7 +17,6 @@ const MoviesSectionList = ({ moviesList, askMoreMovies, navigation }) => {
   const startLoading = () => setLoading(true);
   const stopLoading = () => setLoading(false);
 
-  const navigateToMoviewDetail = () => navigation.navigate('Trends');
   return (
     <View style={Styles.mainList}>
       <SectionList
@@ -25,7 +24,13 @@ const MoviesSectionList = ({ moviesList, askMoreMovies, navigation }) => {
         sections={moviesList}
         keyExtractor={(item) => item.id}
         renderItem={({ item: movie }) => {
-          return <Banner movie={movie} onPress={navigateToMoviewDetail} />;
+          const { id } = movie;
+          return (
+            <Banner
+              movie={movie}
+              onPress={() => navigation.navigate('MovieDetail', { id })}
+            />
+          );
         }}
         renderSectionHeader={({ section: { title } }) => (
           <SectionHeader name={title} />

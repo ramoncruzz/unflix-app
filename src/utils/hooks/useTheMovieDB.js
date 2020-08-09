@@ -27,7 +27,7 @@ const groupByGenre = (listGenre, listMovies) => {
   return _moviesByGenre;
 };
 
-const useTheMovieDB = () => {
+const useTheMovieDB = (idMovie = 0) => {
   const [moviesList, setMoviesList] = useState([]);
   const [moviesByGenre, setMoviesByGenre] = useState([]);
   const [genreList, setGenreList] = useState([]);
@@ -36,7 +36,7 @@ const useTheMovieDB = () => {
   const [trendsOfWeek, setTrendOfWeek] = useState([]);
   const [trendsOfWeekByGenre, setTrendOfWeekByGenre] = useState([]);
   const [movieDetail, setMovieDetail] = useState(null);
-  const [movieId, setMovieId] = useState(400160);
+  const [movieId, setMovieId] = useState(idMovie === 0 ? 400160 : idMovie);
   const [page, setPage] = useState(1);
   const [pageTrends, setPageTrends] = useState(1);
 
