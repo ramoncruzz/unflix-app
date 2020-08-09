@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, Text, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LottieView from 'lottie-react-native';
-
 import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 
-const loadding = require('../../../lottiefiles/world.json');
-
 const Home = () => {
-  const { movies, setMovieId, movieDetail, setTermSearch } = useTheMovieDB();
+  const { movies, movieDetail, setTermSearch } = useTheMovieDB();
   useEffect(() => {
     setTermSearch('Barraca');
   }, []);
