@@ -11,12 +11,13 @@ const SectionHeader = ({ name }) => (
   </View>
 );
 
-const MoviesSectionList = ({ moviesList, askMoreMovies }) => {
+const MoviesSectionList = ({ moviesList, askMoreMovies, navigation }) => {
   const [isLoading, setLoading] = useState(false);
 
   const startLoading = () => setLoading(true);
   const stopLoading = () => setLoading(false);
 
+  const navigateToMoviewDetail = () => navigation.navigate('Trends');
   return (
     <View style={Styles.mainList}>
       <SectionList
@@ -24,7 +25,7 @@ const MoviesSectionList = ({ moviesList, askMoreMovies }) => {
         sections={moviesList}
         keyExtractor={(item) => item.id}
         renderItem={({ item: movie }) => {
-          return <Banner name={movie.title} />;
+          return <Banner movie={movie} onPress={navigateToMoviewDetail} />;
         }}
         renderSectionHeader={({ section: { title } }) => (
           <SectionHeader name={title} />
@@ -44,10 +45,12 @@ const MoviesSectionList = ({ moviesList, askMoreMovies }) => {
 MoviesSectionList.propTypes = {
   moviesList: PropTypes.arrayOf(PropTypes.shape({})),
   askMoreMovies: PropTypes.func,
+  navigation: PropTypes.shape({ navigate: PropTypes.func }),
 };
 MoviesSectionList.defaultProps = {
   moviesList: [],
   askMoreMovies: () => {},
+  navigation: { navigate: () => {} },
 };
 
 export default MoviesSectionList;

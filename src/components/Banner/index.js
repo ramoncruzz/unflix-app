@@ -1,5 +1,12 @@
 import React, { useState, memo } from 'react';
-import { Text, View, StyleSheet, Image, Dimensions } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import Proptypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -26,9 +33,9 @@ const Style = StyleSheet.create({
     paddingStart: 10,
     justifyContent: 'center',
   },
-  title: { fontSize: 30, fontFamily: 'SourceSansPro-Bold' },
+  title: { fontSize: 20, fontFamily: 'SourceSansPro-Bold', flex: 2.5 },
   tagline: {
-    fontSize: 20,
+    fontSize: 16,
     marginTop: 10,
     fontFamily: 'SourceSansPro-Light',
   },
@@ -39,10 +46,10 @@ const Style = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-const Banner = ({ movie }) => {
+const Banner = ({ movie, hideOverview, onPress, children }) => {
   const [voteAverage] = useState(movie.vote_average);
   const [title] = useState(movie.title);
-  const [tagline] = useState(movie.tagline);
+  const [overview] = useState(movie.overview);
   const [hasGoodVotes, setHasGoodVotes] = useState(false);
   const [urlImage, setUrlImage] = useState(null);
 
@@ -51,32 +58,40 @@ const Banner = ({ movie }) => {
     if (voteAverage >= 7) {
       setHasGoodVotes(true);
     }
+
     const { poster_path: PosterPath } = movie;
     setUrlImage(`${URL}${PosterPath}`);
   }, []);
 
   return (
     <View style={Style.main}>
-      <Image
-        source={{
-          uri: urlImage,
-        }}
-        style={Style.image}
-        resizeMode="stretch"
-      />
-      <View style={Style.info}>
-        <View style={Style.containertitle}>
-          <Text style={Style.title}>{title}</Text>
-          <View style={{ flexDirection: 'row' }}>
-            <Text>
-              {' '}
-              <Text style={Style.votes}>{voteAverage} </Text>/ 10
-            </Text>
-            {hasGoodVotes && <Icon name="trophy" size={30} color="#fca311" />}
+      <TouchableOpacity onPress={onPress}>
+        <Image
+          source={{
+            uri: urlImage,
+          }}
+          style={Style.image}
+          resizeMode="stretch"
+        />
+        <View style={Style.info}>
+          <View style={Style.containertitle}>
+            <Text style={Style.title}>{title}</Text>
+            <View style={{ flexDirection: 'row', flex: 1 }}>
+              <Text>
+                {' '}
+                <Text style={Style.votes}>{voteAverage} </Text>/ 10
+              </Text>
+              {hasGoodVotes && <Icon name="trophy" size={30} color="#fca311" />}
+            </View>
           </View>
+          {!hideOverview && (
+            <Text numberOfLines={5} ellipsizeMode="tail" style={Style.tagline}>
+              {overview}
+            </Text>
+          )}
+          {children}
         </View>
-        <Text style={Style.tagline}>{tagline}</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -84,19 +99,23 @@ const Banner = ({ movie }) => {
 Banner.propTypes = {
   movie: Proptypes.shape({
     title: Proptypes.string,
-    tagline: Proptypes.string,
+    overview: Proptypes.string,
     vote_average: Proptypes.number,
     poster_path: Proptypes.string,
   }),
+  hideOverview: Proptypes.bool,
+  onPress: Proptypes.func,
 };
 
 Banner.defaultProps = {
   movie: {
     title: null,
-    tagline: null,
+    overview: null,
     vote_average: 0,
-    poster_path: '/kjMbDciooTbJPofVXgAoFjfX8Of.jpg',
+    poster_path: '/744ZoymAp95NN9ZGXdXgmpxTd7H.jpg',
   },
+  hideOverview: false,
+  onPress: () => {},
 };
 
 export default memo(Banner);

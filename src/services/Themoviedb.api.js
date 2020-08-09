@@ -24,10 +24,10 @@ const discover = (page) =>
       });
   });
 
-const trending = () =>
+const trending = (page) =>
   new Promise((resolve, reject) => {
     service
-      .get('/trending/movie/week')
+      .get('/trending/movie/week', { params: { page } })
       .then((movies) => resolve(movies))
       .catch((error) => reject(error));
   });

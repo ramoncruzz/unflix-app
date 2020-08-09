@@ -7,6 +7,26 @@ import {
   searchMovie,
 } from '../../services/Themoviedb.api';
 
+const groupByGenre = (listGenre, listMovies) => {
+  // eslint-disable-next-line no-underscore-dangle
+  const _moviesByGenre = [];
+  listGenre.forEach((genreItem) => {
+    const { id, name } = genreItem;
+    const data = listMovies.filter((movie) => {
+      const { genre_ids: genreIds } = movie;
+      return genreIds.some((item) => item === id);
+    });
+    if (data.length > 0) {
+      _moviesByGenre.push({
+        id,
+        title: name,
+        data,
+      });
+    }
+  });
+  return _moviesByGenre;
+};
+
 const useTheMovieDB = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [moviesByGenre, setMoviesByGenre] = useState([]);
@@ -14,37 +34,51 @@ const useTheMovieDB = () => {
   const [termSearch, setTermSearch] = useState(null);
   const [searchResult, setSearchResult] = useState([]);
   const [trendsOfWeek, setTrendOfWeek] = useState([]);
+  const [trendsOfWeekByGenre, setTrendOfWeekByGenre] = useState([]);
   const [movieDetail, setMovieDetail] = useState(null);
   const [movieId, setMovieId] = useState(400160);
   const [page, setPage] = useState(1);
+  const [pageTrends, setPageTrends] = useState(1);
 
   useEffect(() => {
-    trending()
-      .then((_trends) => {
-        setTrendOfWeek(_trends);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-underscore-dangle
-    const _moviesByGenre = [];
-    genreList.forEach((genreItem) => {
-      const { id, name } = genreItem;
-      const data = moviesList.filter((movie) => {
-        const { genre_ids: genreIds } = movie;
-        return genreIds.some((item) => item === id);
-      });
-      if (data.length > 0) {
-        _moviesByGenre.push({
-          id,
-          title: name,
-          data,
-        });
-      }
+    genre().then((_genres) => {
+      const { genres } = _genres;
+      trending(pageTrends)
+        .then((_trends) => {
+          const {
+            total_results: TotalResults,
+            total_pages: TotalPages,
+            results,
+          } = _trends;
+          const genreObject = genres.reduce((obj, item) => {
+            const { name, id } = item;
+            obj[id] = name;
+            return obj;
+          }, {});
+          const qtdMoviesExpected = (TotalResults / TotalPages) * pageTrends;
+          const isListUpdated = moviesList.length < qtdMoviesExpected;
+          if (isListUpdated) {
+            const newMovies = results.map((item) => {
+              const { genre_ids: genreIds } = item;
+              const innergenre = genreIds.map(
+                (genreId) => genreObject[genreId] || null
+              );
+              return { ...item, genres: innergenre };
+            });
+            setTrendOfWeek((oldState) => oldState.concat(newMovies));
+          }
+        })
+        .catch((error) => console.log(error));
     });
-    setMoviesByGenre(_moviesByGenre);
+  }, [pageTrends]);
+
+  useEffect(() => {
+    setMoviesByGenre(groupByGenre(genreList, moviesList));
   }, [moviesList]);
+
+  useEffect(() => {
+    setTrendOfWeekByGenre(groupByGenre(genreList, trendsOfWeek));
+  }, [trendsOfWeek]);
 
   useEffect(() => {
     searchMovie(termSearch)
@@ -106,11 +140,13 @@ const useTheMovieDB = () => {
     movies: moviesList,
     movieDetail,
     trends: trendsOfWeek,
+    trendsByGenre: trendsOfWeekByGenre,
     page,
     searchResult,
     moviesByGenre,
     setTermSearch,
     setPage,
+    setPageTrends,
     setMovieId,
   };
 };

@@ -1,14 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  SafeAreaView,
-  Text,
-  StatusBar,
-  Button,
-  StyleSheet,
-  SectionList,
-  View,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 import { VideosList } from '../../components';
 
@@ -20,26 +11,30 @@ const Styles = StyleSheet.create({
     backgroundColor: '#edf6f9',
   },
 });
-
-const Home = () => {
+const Home = ({ navigation }) => {
   const {
-    movies,
-    movieDetail,
     setTermSearch,
     setPage,
+    setPageTrends,
     moviesByGenre,
+    trendsByGenre,
   } = useTheMovieDB();
 
-  // useEffect(() => {
-  //   setTermSearch('Barraca');
-
-  //   const tete = props;
-  // }, []);
+  useEffect(() => {
+    setTermSearch('Barraca');
+    setPageTrends(2);
+    setPageTrends(3);
+  }, []);
 
   const askMoreMovies = () => setPage((oldPage) => oldPage + 1);
   return (
     <SafeAreaView style={Styles.main}>
-      <VideosList moviesList={moviesByGenre} askMoreMovies={askMoreMovies} />
+      <Text> tamanho {trendsByGenre.length}</Text>
+      <VideosList
+        moviesList={moviesByGenre}
+        askMoreMovies={askMoreMovies}
+        navigation={navigation}
+      />
     </SafeAreaView>
   );
 };
