@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "bfbf5663-e49f-43a7-9741-1aa786fedfe9",
+		"name": "UNFLIX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/movie/516486?language=pt-br",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"movie",
+						"516486"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "pt-br"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discover",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/discover/movie?language=en&page=1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"discover",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "en"
+						},
+						{
+							"key": "certification_country",
+							"value": "US",
+							"disabled": true
+						},
+						{
+							"key": "certification.lte",
+							"value": "G",
+							"disabled": true
+						},
+						{
+							"key": "sort_by",
+							"value": "popularity.desc",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Genres",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/genre/movie/list?language=pt-BR",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"genre",
+						"movie",
+						"list"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "pt-BR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "languages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/configuration/languages",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"configuration",
+						"languages"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "pt-BR",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trending",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/trending/movie/week?language=pt-br",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"trending",
+						"movie",
+						"week"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "pt-br"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "banner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://image.tmdb.org/t/p/w500/oUafkafJiFKkXuzROaAY8N9gGq.jpg",
+					"protocol": "https",
+					"host": [
+						"image",
+						"tmdb",
+						"org"
+					],
+					"path": [
+						"t",
+						"p",
+						"w500",
+						"oUafkafJiFKkXuzROaAY8N9gGq.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Banner original size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://image.tmdb.org/t/p/original/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png",
+					"protocol": "https",
+					"host": [
+						"image",
+						"tmdb",
+						"org"
+					],
+					"path": [
+						"t",
+						"p",
+						"original",
+						"IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search movie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/search/movie?language=pt&query=Sponge",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"search",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "pt"
+						},
+						{
+							"key": "query",
+							"value": "Sponge"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
