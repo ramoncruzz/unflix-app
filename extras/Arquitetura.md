@@ -1,0 +1,4 @@
+# Arquitetura interna do app
+
+
+
