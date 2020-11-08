@@ -60,4 +60,4 @@ buck-out/
 /ios/Podfile.lock
 
 # npm
- yarn.lock
+yarn.lock

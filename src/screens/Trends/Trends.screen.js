@@ -1,9 +1,9 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 import { VideosList } from '../../components';
-
+import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 import Styles from './Trends.styles';
+
 
 const Trends = ({ navigation }) => {
   const { setPageTrends, trendsByGenre } = useTheMovieDB();

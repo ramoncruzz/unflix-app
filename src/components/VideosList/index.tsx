@@ -22,7 +22,7 @@ type navigationObj= {
 
 interface moviesSectionListProps {
   moviesList: Array<any>,
-  askMoreMovies: ()=>{},
+  askMoreMovies: ()=> void,
   navigation: navigationObj
 }
 const MoviesSectionList: React.FC<moviesSectionListProps> = ({ moviesList, askMoreMovies, navigation }) : JSX.Element => {

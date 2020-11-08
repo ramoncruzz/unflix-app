@@ -1,6 +1,6 @@
 import axios from 'axios';
+import { RNLocale } from '../nativeModules';
 import Env from './Env';
-import { RNLocale } from '../NativeModules';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const ACCESS_API = `Bearer ${Env.tokenTheMoviedb}`;
