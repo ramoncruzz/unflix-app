@@ -5,7 +5,11 @@ module.exports = {
     extends: [
       'airbnb',
       'prettier',
-      'prettier/react'
+      'plugin:@typescript-eslint/recommended',
+      'prettier/react',
+      'prettier/@typescript-eslint',
+      'plugin:react-hooks/recommended',
+      'eslint:recommended'
     ],
     globals: {
       Atomics: 'readonly',
@@ -29,7 +33,7 @@ module.exports = {
       'react/jsx-filename-extension': [
         'warn',
         {
-          extensions: ['.jsx', '.js']
+          extensions: ['.jsx', '.js','.tsx','.ts']
         }
       ],
       'import/prefer-default-export': 'off',
