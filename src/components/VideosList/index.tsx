@@ -1,17 +1,31 @@
 import React, { useState } from 'react';
-import { Text, SectionList, View } from 'react-native';
-import PropTypes from 'prop-types';
-import Styles from './index.styles';
-import Loading from '../Loadind';
+import { SectionList, Text, View } from 'react-native';
 import Banner from '../Banner';
+import Loading from '../Loadind';
+import Styles from './index.styles';
 
-const SectionHeader = ({ name }) => (
+interface sectionHeaderProps {
+  name : string
+}
+
+const SectionHeader:React.FC<sectionHeaderProps> = ({ name }): JSX.Element => (
   <View style={Styles.mainSectionHeader}>
     <Text style={Styles.headerTitle}>{name}</Text>
   </View>
 );
 
-const MoviesSectionList = ({ moviesList, askMoreMovies, navigation }) => {
+
+
+type navigationObj= {
+  navigate: (routName: string, props: any)=> void
+}
+
+interface moviesSectionListProps {
+  moviesList: Array<any>,
+  askMoreMovies: ()=>{},
+  navigation: navigationObj
+}
+const MoviesSectionList: React.FC<moviesSectionListProps> = ({ moviesList, askMoreMovies, navigation }) : JSX.Element => {
   const [isLoading, setLoading] = useState(false);
 
   const startLoading = () => setLoading(true);
@@ -47,15 +61,15 @@ const MoviesSectionList = ({ moviesList, askMoreMovies, navigation }) => {
   );
 };
 
-MoviesSectionList.propTypes = {
-  moviesList: PropTypes.arrayOf(PropTypes.shape({})),
-  askMoreMovies: PropTypes.func,
-  navigation: PropTypes.shape({ navigate: PropTypes.func }),
-};
-MoviesSectionList.defaultProps = {
-  moviesList: [],
-  askMoreMovies: () => {},
-  navigation: { navigate: () => {} },
-};
+// MoviesSectionList.propTypes = {
+//   moviesList: PropTypes.arrayOf(PropTypes.shape({})),
+//   askMoreMovies: PropTypes.func,
+//   navigation: PropTypes.shape({ navigate: PropTypes.func }),
+// };
+// MoviesSectionList.defaultProps = {
+//   moviesList: [],
+//   askMoreMovies: () => {},
+//   navigation: { navigate: () => {} },
+// };
 
 export default MoviesSectionList;

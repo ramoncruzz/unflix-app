@@ -1,16 +1,29 @@
-import React, { useState, useEffect, memo } from 'react';
-import { Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
-import Proptypes from 'prop-types';
+import React, { memo, useEffect, useState } from 'react';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Style from './index.style';
 import { Title, Vote } from './styled';
 
-const Banner = ({ movie, hideOverview, onPress, children }) => {
-  const [voteAverage, setvoteAvarage] = useState(0);
-  const [title, setTitle] = useState(null);
-  const [overview, setOverview] = useState(null);
+
+type Movie = {
+  title: string,
+  overview: string,
+  vote_average: number,
+  poster_path: string
+}
+interface IBannerProps {
+  movie: Movie,
+  hideOverview?: boolean,
+  onPress: ()=>void
+}
+
+
+const Banner: React.FC<IBannerProps> = ({ movie, hideOverview, onPress, children }): JSX.Element => {
+  const [voteAverage, setvoteAvarage] = useState<number>(0);
+  const [title, setTitle] = useState<string>();
+  const [overview, setOverview] = useState<string>();
   const [hasGoodVotes, setHasGoodVotes] = useState(false);
-  const [urlImage, setUrlImage] = useState(null);
+  const [urlImage, setUrlImage] = useState<string>();
 
   const URL = 'https://image.tmdb.org/t/p/w500';
   useEffect(() => {
@@ -65,26 +78,26 @@ const Banner = ({ movie, hideOverview, onPress, children }) => {
   );
 };
 
-Banner.propTypes = {
-  movie: Proptypes.shape({
-    title: Proptypes.string,
-    overview: Proptypes.string,
-    vote_average: Proptypes.number,
-    poster_path: Proptypes.string,
-  }),
-  hideOverview: Proptypes.bool,
-  onPress: Proptypes.func,
-};
+// Banner.propTypes = {
+//   movie: Proptypes.shape({
+//     title: Proptypes.string,
+//     overview: Proptypes.string,
+//     vote_average: Proptypes.number,
+//     poster_path: Proptypes.string,
+//   }),
+//   hideOverview: Proptypes.bool,
+//   onPress: Proptypes.func,
+// };
 
-Banner.defaultProps = {
-  movie: {
-    title: null,
-    overview: null,
-    vote_average: 0,
-    poster_path: '/744ZoymAp95NN9ZGXdXgmpxTd7H.jpg',
-  },
-  hideOverview: false,
-  onPress: () => {},
-};
+// Banner.defaultProps = {
+//   movie: {
+//     title: null,
+//     overview: null,
+//     vote_average: 0,
+//     poster_path: '/744ZoymAp95NN9ZGXdXgmpxTd7H.jpg',
+//   },
+//   hideOverview: false,
+//   onPress: () => {},
+// };
 
 export default memo(Banner);
