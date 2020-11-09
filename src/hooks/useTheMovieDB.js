@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
-  movieDetail as movieDetailEndPoint,
   discover,
-  trending,
-  genre,
-  searchMovie,
-} from '../../services/Themoviedb.api';
+  genre, movieDetail as movieDetailEndPoint,
+  searchMovie, trending
+} from '../services/Themoviedb.api';
 
 const groupByGenre = (listGenre, listMovies) => {
   // eslint-disable-next-line no-underscore-dangle

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, ScrollView, View } from 'react-native';
-import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Banner } from '../../components';
+import useTheMovieDB from '../../hooks/useTheMovieDB';
 
 const Styles = StyleSheet.create({
   main: {
