@@ -43,6 +43,8 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -60,5 +62,4 @@
   "jest": {
     "preset": "react-native"
   }
-  
 }

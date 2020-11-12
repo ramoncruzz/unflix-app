@@ -1,13 +1,36 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
 import 'react-native-gesture-handler';
 import HomeScreen from '../screens/Home/Home.screen';
 import MovieDetailScreen from '../screens/MovieDetail/MovieDetail.screen';
 import TrendsScreen from '../screens/Trends/Trends.screen';
 
-const Stack = createStackNavigator();
+type RootStackParams ={
+  Home: undefined,
+  MovieDetail : undefined,
+  Trends: undefined
+}
+
+const optionsNavitagionMaker=(title?: string): StackNavigationOptions=>{
+ 
+  return {
+    title: title ??= 'UNFLIX',
+    headerStyle: {
+      backgroundColor: '#19ABC2',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 40,
+      fontFamily: 'BebasNeue-Regular',
+    },
+  }
+
+}
+
+const Stack = createStackNavigator<RootStackParams>();
 const Tab = createBottomTabNavigator();
 
 const HomeStack = () => (
@@ -15,50 +38,23 @@ const HomeStack = () => (
     <Stack.Screen
       name="Home"
       component={HomeScreen}
-      options={{
-        title: 'UNFLIX',
-        headerStyle: {
-          backgroundColor: '#19ABC2',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-          fontFamily: 'BebasNeue-Regular',
-        },
-      }}
+      options={
+        optionsNavitagionMaker()
+      }
     />
     <Stack.Screen
       name="Trends"
       component={TrendsScreen}
-      options={{
-        title: 'Tendências',
-        headerStyle: {
-          backgroundColor: '#19ABC2',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-          fontFamily: 'BebasNeue-Regular',
-        },
-      }}
+      options={
+        optionsNavitagionMaker('Tendências') 
+      }
     />
     <Stack.Screen
       name="MovieDetail"
       component={MovieDetailScreen}
-      options={{
-        title: 'Detalhe',
-        headerStyle: {
-          backgroundColor: '#19ABC2',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-          fontFamily: 'BebasNeue-Regular',
-        },
-      }}
+      options={
+        optionsNavitagionMaker('Detalhe') 
+    }
     />
   </Stack.Navigator>
 );
@@ -68,34 +64,14 @@ const TendenciasStack = () => (
     <Stack.Screen
       name="Trends"
       component={TrendsScreen}
-      options={{
-        title: 'Tendências',
-        headerStyle: {
-          backgroundColor: '#19ABC2',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-          fontFamily: 'BebasNeue-Regular',
-        },
-      }}
+      options={
+        optionsNavitagionMaker('Tendências') 
+      }
     />
     <Stack.Screen
       name="MovieDetail"
       component={MovieDetailScreen}
-      options={{
-        title: 'Detalhe',
-        headerStyle: {
-          backgroundColor: '#19ABC2',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-          fontFamily: 'BebasNeue-Regular',
-        },
-      }}
+      options={optionsNavitagionMaker('Detalhe') }
     />
   </Stack.Navigator>
 );

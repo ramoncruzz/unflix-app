@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { VideosList } from '../../components';
-import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
+import useTheMovieDB from '../../hooks/useTheMovieDB';
 import Styles from './Trends.styles';
 
 
