@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
 import 'react-native-gesture-handler';
-import HomeScreen from '../screens/Home/Home.screen';
-import MovieDetailScreen from '../screens/MovieDetail/MovieDetail.screen';
-import TrendsScreen from '../screens/Trends/Trends.screen';
+import HomeScreen from '../screens/Home';
+import MovieDetailScreen from '../screens/MovieDetail';
+import TrendsScreen from '../screens/Trends';
 
 type RootStackParams ={
   Home: undefined,
@@ -16,7 +16,7 @@ type RootStackParams ={
 const optionsNavitagionMaker=(title?: string): StackNavigationOptions=>{
  
   return {
-    title: title ??= 'UNFLIX',
+    title: title = 'UNFLIX',
     headerStyle: {
       backgroundColor: '#19ABC2',
     },

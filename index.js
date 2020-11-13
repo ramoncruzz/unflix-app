@@ -1,5 +1,4 @@
 import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
-import App from './src/routes';
-AppRegistry.registerComponent(appName, () => App);
+import App from './src/routes/index';
+AppRegistry.registerComponent("UnFlix", () => App);
 
