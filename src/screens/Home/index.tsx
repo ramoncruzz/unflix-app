@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SafeAreaView } from 'react-native';
-import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
 import { VideosList } from '../../components';
+import useTheMovieDB from '../../hooks/useTheMovieDB';
 import Styles from './Home.stye';
 
-const Home = ({ navigation }) => {
+type HomeProps ={
+  navigation: any
+}
+
+const Home: React.FC<HomeProps> = ({ navigation }): JSX.Element => {
   const {
-    setTermSearch,
     setPage,
-    setPageTrends,
     moviesByGenre,
   } = useTheMovieDB();
 
@@ -18,7 +20,7 @@ const Home = ({ navigation }) => {
   //   setPageTrends(3);
   // }, []);
 
-  const askMoreMovies = () => setPage((oldPage) => oldPage + 1);
+  const askMoreMovies = () => setPage((oldPage: number) => oldPage + 1);
   return (
     <SafeAreaView style={Styles.main}>
       <VideosList

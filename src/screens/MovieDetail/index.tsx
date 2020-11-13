@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, ScrollView, View } from 'react-native';
-import useTheMovieDB from '../../utils/hooks/useTheMovieDB';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Banner } from '../../components';
+import useTheMovieDB from '../../hooks/useTheMovieDB';
 
 const Styles = StyleSheet.create({
   main: {
@@ -34,7 +34,7 @@ const MoviewDetail = ({ route }) => {
             <View style={{ flex: 1, justifyContent: 'center' }}>
               <Text style={Styles.textBody}>{movieDetail.overview}</Text>
               <Text style={Styles.title}>Lançamento</Text>
-              <Text style={Styles.text}>{movieDetail.release_date}</Text>
+              <Text style={Styles.textBody}>{movieDetail.release_date}</Text>
               <Text style={Styles.title}>Título original</Text>
               <Text style={Styles.textBody}>{movieDetail.original_title}</Text>
             </View>

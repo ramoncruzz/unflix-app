@@ -1,6 +1,6 @@
-import Tabbar from './Tabbar';
 import Banner from './Banner';
-import VideosList from './VideosList';
 import Loading from './Loadind';
+import Tabbar from './Tabbar';
+import VideosList from './VideosList';
 
 export { Tabbar, Banner, VideosList, Loading };
