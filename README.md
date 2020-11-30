@@ -4,7 +4,7 @@
 
 ## Arquitetura
 
-### Requisitos Funcionais e não funcionais
+### Requisitos funcionais e não funcionais
 
 Os requisitos funcinais do UnFlix estão escritos no formato de histórias de usuário, de maneira a facilitar a comunicação entre a Área de Negócios e a Área de Tecnologia. A história de usuário é uma linguagem simples, porém com grandes benefícios.
 
@@ -24,7 +24,7 @@ QUANDO rolar a feed para ver mais filmes, gostaria de vê-los  de maneira mais o
 ENTÃO gostaria de ver os filmes organizados em categorias
 ~~~
 
-**Requisito não funcional**:
+`Requisito não funcional`:
 
 - Implementar _lazzy load_ na lista de filmes;
 - Implementar um _hook_ com a responsabilidade de buscar e processar os dados para a tela exibir ao usuário;
