@@ -55,7 +55,7 @@ Requisito não funcional:
 ~~~
 COMO um usuário fã de cinema
 DADO um catálogo de filmes
-QUANDO eu estiver rolando o feed, eu gostaria de ver também quais são as tendências do momento
+QUANDO eu estiver rolando o feed, gostaria de ver também quais são as tendências do momento
 ENTÃO gostaria de ter um local específico para ver as tendências
 ~~~
 

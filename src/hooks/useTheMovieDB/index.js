@@ -3,7 +3,7 @@ import {
   discover,
   genre, movieDetail as movieDetailEndPoint,
   searchMovie, trending
-} from '../services/Themoviedb.api';
+} from '../../services/Themoviedb.api';
 
 const groupByGenre = (listGenre, listMovies) => {
   // eslint-disable-next-line no-underscore-dangle
