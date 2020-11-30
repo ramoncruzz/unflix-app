@@ -6,13 +6,13 @@
 
 ### Requisitos Funcionais e não funcionais
 
-Os requisitos funcinais do UnFlix estão escritos no formato de histórias de usuário. De maneira a facilitar a comunicação entre a Área de negócios e a Área de Tecnologia. A história de usuário é uma linguagem simples, porém com grandes benefícios.
+Os requisitos funcinais do UnFlix estão escritos no formato de histórias de usuário, de maneira a facilitar a comunicação entre a Área de Negócios e a Área de Tecnologia. A história de usuário é uma linguagem simples, porém com grandes benefícios.
 
-Para Stackholders que não são de TI o grande benefício é a possibilidade de ilustrar algo abstrado e conseguir descrever o comportamento esperado do App.
+Para _Stackholders_, que não são de TI, o grande benefício é a possibilidade de ilustrar algo abstrato e conseguir descrever o comportamento esperado do App.
 
-Para Stackholdes de TI o grande benefício é a compreensão do que tem valor para entregar. Isso é uma grande contribuição e uma forma de evitar atividades que possuiem complexidade tecnógica mas baixo valor de negócio.
+Para _Stackholdes_ de TI o grande benefício é a compreensão do que tem valor para entregar, essa é uma grande contribuição e uma forma de evitar atividades que possuem complexidade tecnólogica mas baixo valor de negócio.
 
-Os requisitos funcionais não são descritos em histórias de usuários, uma vez que para descreve-los bem como compreende-los é necessário um conhecimento prévio em TI. Nesse projeto os requisitos funcionais são inferidos a partir das histórias de usuários. Sempre visando obter a melhor experiência do usuário.
+Os requisitos funcionais não são descritos no formato de histórias de usuários, uma vez que para descrevê-los, bem como compreendê-los, é necessário um conhecimento prévio em TI. Nesse projeto os requisitos funcionais são inferidos a partir das histórias de usuários, sempre visando obter a melhor experiência do usuário.
 
 ### Histórias de Usuários
 
@@ -20,14 +20,14 @@ Os requisitos funcionais não são descritos em histórias de usuários, uma vez
 ~~~
 COMO um usuário fã de cinema
 DADO Um grande catálogo de filmes 
-QUANDO eu rolar a feed para ver mais filmes eu gostaria de ver-los  de uma maneira mais organizada
-ENTAO gostaria de poder ver os filmes organizados por categorias
+QUANDO rolar a feed para ver mais filmes, gostaria de vê-los  de maneira mais organizada
+ENTÃO gostaria de ver os filmes organizados em categorias
 ~~~
 
 **Requisito não funcional**:
 
 - Implementar _lazzy load_ na lista de filmes;
-- Implementar um _hook_ com a responsabilidade de buscar e processar os dadas para tela exibir ao usuário;
+- Implementar um _hook_ com a responsabilidade de buscar e processar os dados para a tela exibir ao usuário;
 - Implementar estrutura de cache local.
 
 ### História Nº 02 ###
@@ -35,7 +35,7 @@ ENTAO gostaria de poder ver os filmes organizados por categorias
 COMO um usuário fã de cinema
 DADO Um grande catálogo de filmes organizados por categorias
 QUANDO eu selecionar um filme, eu gostaria de mais informações sobre o filme selecionados
-ENTAO então verei em uma tela mais informações sobre o filme
+ENTÃO então verei em uma tela mais informações sobre o filme
 ~~~
 
 ### História Nº 03 ###
@@ -44,7 +44,7 @@ ENTAO então verei em uma tela mais informações sobre o filme
 COMO um usuário fã de cinema
 DADO Um catálogo de filmes
 QUANDO eu estiver rolando a tela de catalogo, gostaria de poder pesquisar por nome do filme
-ENTAO gostaria de ter um local especifico para fazer minhas pesquisas
+ENTÃO gostaria de ter um local especifico para fazer minhas pesquisas
 ~~~
 
 **Requisito não funcional**:
