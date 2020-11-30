@@ -16,8 +16,8 @@ Os requisitos funcionais não são descritos em histórias de usuários, uma vez
 
 ### Histórias de Usuários
 
+###História Nº 01###
 ~~~
-Nº 01
 COMO um usuário fã de cinema
 DADO Um grande catálogo de filmes 
 QUANDO eu rolar a feed para ver mais filmes eu gostaria de ver-los  de uma maneira mais organizada
@@ -30,16 +30,17 @@ ENTAO gostaria de poder ver os filmes organizados por categorias
 - Implementar um _hook_ com a responsabilidade de buscar e processar os dadas para tela exibir ao usuário;
 - Implementar estrutura de cache local.
 
+###História Nº 02###
 ~~~
-Nº 02
 COMO um usuário fã de cinema
 DADO Um grande catálogo de filmes organizados por categorias
 QUANDO eu selecionar um filme, eu gostaria de mais informações sobre o filme selecionados
 ENTAO então verei em uma tela mais informações sobre o filme
 ~~~
 
+###História Nº 03###
 ~~~
-Nº 03
+
 COMO um usuário fã de cinema
 DADO Um catálogo de filmes
 QUANDO eu estiver rolando a tela de catalogo, gostaria de poder pesquisar por nome do filme
@@ -50,8 +51,8 @@ ENTAO gostaria de ter um local especifico para fazer minhas pesquisas
 
 - Implementar motor de busca local (cache) e on line (consulta api-rest)
 
+###História Nº 04###
 ~~~
-Nº 04
 COMO um usuário fã de cinema
 DADO Um catálogo de filmes
 QUANDO eu estiver rolando o feed, eu gostaria de ver também quais são as tendências do momento
