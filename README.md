@@ -33,30 +33,30 @@ ENTÃO gostaria de ver os filmes organizados em categorias
 ### História Nº 02 ###
 ~~~
 COMO um usuário fã de cinema
-DADO Um grande catálogo de filmes organizados por categorias
-QUANDO eu selecionar um filme, eu gostaria de mais informações sobre o filme selecionados
-ENTÃO então verei em uma tela mais informações sobre o filme
+DADO um grande catálogo de filmes organizados em categorias
+QUANDO eu selecionar um filme, gostaria de mais informações sobre este
+ENTÃO verei em uma tela mais informações sobre o filme
 ~~~
 
 ### História Nº 03 ###
 ~~~
 
 COMO um usuário fã de cinema
-DADO Um catálogo de filmes
-QUANDO eu estiver rolando a tela de catalogo, gostaria de poder pesquisar por nome do filme
-ENTÃO gostaria de ter um local especifico para fazer minhas pesquisas
+DADO um catálogo de filmes
+QUERO pesquisar por nome do filme
+PARA Localizar facilmente o filme de minha preferência
 ~~~
 
 **Requisito não funcional**:
 
-- Implementar motor de busca local (cache) e on line (consulta api-rest)
+- Implementar motor de busca local (cache) e on-line (consulta api-rest)
 
 ### História Nº 04 ###
 ~~~
 COMO um usuário fã de cinema
-DADO Um catálogo de filmes
+DADO um catálogo de filmes
 QUANDO eu estiver rolando o feed, eu gostaria de ver também quais são as tendências do momento
-PARA isso, eu gostaria de ter um local especifico para ver as tendencias
+ENTÃO gostaria de ter um local específico para ver as tendências
 ~~~
 
 ## Preparando Ambiente
