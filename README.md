@@ -30,27 +30,33 @@ ENTAO gostaria de poder ver os filmes organizados por categorias
 - Implementar um _hook_ com a responsabilidade de buscar e processar os dadas para tela exibir ao usuário;
 - Implementar estrutura de cache local.
 
-> **Nº 02**
-> COMO um usuário fã de cinema
-> DADO Um grande catálogo de filmes organizados por categorias
-> QUANDO eu selecionar um filme, eu gostaria de mais informações sobre o filme selecionados
-> ENTAO então verei em uma tela mais informações sobre o filme
+~~~
+Nº 02
+COMO um usuário fã de cinema
+DADO Um grande catálogo de filmes organizados por categorias
+QUANDO eu selecionar um filme, eu gostaria de mais informações sobre o filme selecionados
+ENTAO então verei em uma tela mais informações sobre o filme
+~~~
 
-> **Nº 03**
-> COMO um usuário fã de cinema
-> DADO Um catálogo de filmes
-> QUANDO eu estiver rolando a tela de catalogo, gostaria de poder pesquisar por nome do filme
-> ENTAO gostaria de ter um local especifico para fazer minhas pesquisas
+~~~
+Nº 03
+COMO um usuário fã de cinema
+DADO Um catálogo de filmes
+QUANDO eu estiver rolando a tela de catalogo, gostaria de poder pesquisar por nome do filme
+ENTAO gostaria de ter um local especifico para fazer minhas pesquisas
+~~~
 
 **Requisito não funcional**:
 
 - Implementar motor de busca local (cache) e on line (consulta api-rest)
 
-> **Nº 04**
-> COMO um usuário fã de cinema
-> DADO Um catálogo de filmes
-> QUANDO eu estiver rolando o feed, eu gostaria de ver também quais são as tendências do momento
-> PARA isso, eu gostaria de ter um local especifico para ver as tendencias
+~~~
+Nº 04
+COMO um usuário fã de cinema
+DADO Um catálogo de filmes
+QUANDO eu estiver rolando o feed, eu gostaria de ver também quais são as tendências do momento
+PARA isso, eu gostaria de ter um local especifico para ver as tendencias
+~~~
 
 ## Preparando Ambiente
 
