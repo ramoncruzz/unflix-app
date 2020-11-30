@@ -16,11 +16,13 @@ Os requisitos funcionais não são descritos em histórias de usuários, uma vez
 
 ### Histórias de Usuários
 
-> **Nº 01**
-> COMO um usuário fã de cinema
-> DADO Um grande catálogo de filmes
-> QUANDO eu rolar a feed para ver mais filmes eu gostaria de ver-los de uma maneira mais organizada
-> ENTAO gostaria de poder ver os filmes organizados por categorias
+~~~
+Nº 01
+COMO um usuário fã de cinema
+DADO Um grande catálogo de filmes 
+QUANDO eu rolar a feed para ver mais filmes eu gostaria de ver-los  de uma maneira mais organizada
+ENTAO gostaria de poder ver os filmes organizados por categorias
+~~~
 
 **Requisito não funcional**:
 
