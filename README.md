@@ -24,7 +24,7 @@ QUANDO rolar a feed para ver mais filmes, gostaria de vê-los  de maneira mais o
 ENTÃO gostaria de ver os filmes organizados em categorias
 ~~~
 
-`Requisito não funcional`:
+Requisito não funcional:
 
 - Implementar _lazzy load_ na lista de filmes;
 - Implementar um _hook_ com a responsabilidade de buscar e processar os dados para a tela exibir ao usuário;
@@ -47,7 +47,7 @@ QUERO pesquisar por nome do filme
 PARA Localizar facilmente o filme de minha preferência
 ~~~
 
-**Requisito não funcional**:
+Requisito não funcional:
 
 - Implementar motor de busca local (cache) e on-line (consulta api-rest)
 
