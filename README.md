@@ -2,7 +2,7 @@
 
 ## Sobre
 
-### Arquitetura
+## Arquitetura
 
 ### Requisitos Funcionais e não funcionais
 
@@ -16,7 +16,7 @@ Os requisitos funcionais não são descritos no formato de histórias de usuári
 
 ### Histórias de Usuários
 
-### História Nº 01 ###
+#### História Nº 01 ####
 ~~~
 COMO um usuário fã de cinema
 DADO Um grande catálogo de filmes 
@@ -30,7 +30,7 @@ ENTÃO gostaria de ver os filmes organizados em categorias
 - Implementar um _hook_ com a responsabilidade de buscar e processar os dados para a tela exibir ao usuário;
 - Implementar estrutura de cache local.
 
-### História Nº 02 ###
+#### História Nº 02 ####
 ~~~
 COMO um usuário fã de cinema
 DADO um grande catálogo de filmes organizados em categorias
@@ -38,7 +38,7 @@ QUANDO eu selecionar um filme, gostaria de mais informações sobre este
 ENTÃO verei em uma tela mais informações sobre o filme
 ~~~
 
-### História Nº 03 ###
+#### História Nº 03 ####
 ~~~
 
 COMO um usuário fã de cinema
@@ -51,7 +51,7 @@ PARA Localizar facilmente o filme de minha preferência
 
 - Implementar motor de busca local (cache) e on-line (consulta api-rest)
 
-### História Nº 04 ###
+#### História Nº 04 ####
 ~~~
 COMO um usuário fã de cinema
 DADO um catálogo de filmes
