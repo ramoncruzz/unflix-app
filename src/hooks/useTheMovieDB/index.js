@@ -6,6 +6,7 @@ import {
 } from '../../services/Themoviedb.api';
 
 const groupByGenre = (listGenre, listMovies) => {
+  debugger;
   // eslint-disable-next-line no-underscore-dangle
   const _moviesByGenre = [];
   listGenre.forEach((genreItem) => {
@@ -22,6 +23,7 @@ const groupByGenre = (listGenre, listMovies) => {
       });
     }
   });
+  debugger;
   return _moviesByGenre;
 };
 
