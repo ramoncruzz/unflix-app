@@ -1,0 +1,387 @@
+{
+    "results": [
+        {
+            "vote_average": 8,
+            "popularity": 916.754,
+            "vote_count": 1594,
+            "release_date": "2020-08-14",
+            "adult": false,
+            "backdrop_path": "/wu1uilmhM4TdluKi2ytfz8gidHf.jpg",
+            "title": "SpongeBob : Esponja em Missão",
+            "genre_ids": [
+                16,
+                14,
+                12,
+                35,
+                10751
+            ],
+            "overview": "Depois de Gary, o adorado caracol de estimação de SpongeBob, ter sido capturado, SpongeBob e Patrick embarcam numa épica aventura para A Cidade Perdida de Atlantic City para trazerem Gary de volta a casa. Enquanto navegam pelos encantos e perigos desta hilariante missão de resgate, SpongeBob e os seus amigos provam que não existe nada mais forte que o poder da amizade.",
+            "original_language": "en",
+            "original_title": "The SpongeBob Movie: Sponge on the Run",
+            "id": 400160,
+            "poster_path": "/7uioNxYrl2Mb8WyNWzs2MPy7EpA.jpg",
+            "video": false
+        },
+        {
+            "vote_average": 6,
+            "popularity": 54.939,
+            "overview": "SpongeBob, o invertebrado aquático mais adorado de todo o planeta, dá à costa e entra no nosso mundo para a sua aventura mais fantástica e heroica de sempre.",
+            "release_date": "2015-01-28",
+            "adult": false,
+            "backdrop_path": "/6eGYsTJvTf2R38YO0NlnqdsaZu0.jpg",
+            "title": "SpongeBob: Esponja Fora de Água",
+            "genre_ids": [
+                12,
+                35,
+                10751,
+                14,
+                16
+            ],
+            "vote_count": 1643,
+            "original_language": "en",
+            "original_title": "The SpongeBob Movie: Sponge Out of Water",
+            "poster_path": "/drP4J85UCoau7J2E9sANDSmD1rC.jpg",
+            "id": 228165,
+            "video": false
+        },
+        {
+            "vote_average": 0,
+            "popularity": 0.841,
+            "vote_count": 0,
+            "release_date": "2002-03-12",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants - Nautical Nonsense and Sponge Buddies",
+            "genre_ids": [
+                16
+            ],
+            "poster_path": "/yu97oqx372lviZqNnorbGDOrw7x.jpg",
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants - Nautical Nonsense and Sponge Buddies",
+            "id": 533185,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 6.8,
+            "popularity": 16.586,
+            "overview": "",
+            "release_date": "2012-11-23",
+            "adult": false,
+            "backdrop_path": "/pxo2c6WeVrQMpZaZvpgQGrHMUxH.jpg",
+            "title": "It's a SpongeBob Christmas!",
+            "genre_ids": [
+                10751,
+                16,
+                35
+            ],
+            "vote_count": 125,
+            "original_language": "en",
+            "original_title": "It's a SpongeBob Christmas!",
+            "poster_path": "/ewcwsytxHGoa3tIUdfwffzphuzc.jpg",
+            "id": 298016,
+            "video": false
+        },
+        {
+            "vote_average": 6.9,
+            "popularity": 51.79,
+            "overview": "Saído da série de sucesso criada pelo canal Nickelodeon, o inusitado personagem Bob Esponja ganha seu primeiro filme. Bob e sua turma saem de férias, mas se metem numa aventura que envolve o roubo da coroa do rei Netuno.",
+            "release_date": "2004-11-14",
+            "adult": false,
+            "backdrop_path": "/yFDeNoSbK1Gof4OtjdzZzuqgO2Q.jpg",
+            "title": "SpongeBob",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                14
+            ],
+            "vote_count": 1869,
+            "original_language": "en",
+            "original_title": "The SpongeBob SquarePants Movie",
+            "poster_path": "/xtb1IAb70xB8AgurxaoNlgTPz7Q.jpg",
+            "id": 11836,
+            "video": false
+        },
+        {
+            "vote_average": 8.3,
+            "popularity": 7.832,
+            "overview": "Bob Esponja cria o melhor hambúrguer de siri de sua vida e agora não pode mais largá-lo. Mas depois de alguns dias, seu hambúrguer perfeito começa a cheirar mal!",
+            "release_date": "2008-01-29",
+            "adult": false,
+            "backdrop_path": "/AnHIt1uIUcG4Q5AF0ySowaUW67Z.jpg",
+            "title": "Bob Esponja - Adoro A Patty",
+            "genre_ids": [
+                16
+            ],
+            "vote_count": 4,
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants - To Love a Patty",
+            "poster_path": "/VWav5eDsMHk2CizqVxjtxsJos4.jpg",
+            "id": 345889,
+            "video": true
+        },
+        {
+            "vote_average": 7.2,
+            "popularity": 9.372,
+            "vote_count": 17,
+            "release_date": "2017-03-01",
+            "adult": false,
+            "backdrop_path": "/cMdcPneXwk421TIox1WS60xw8dc.jpg",
+            "title": "SpongeBob SquarePants: Sea Side Story",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "poster_path": "/kA0Dsum46Rp9RQXaBMrMvqEMNo.jpg",
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Sea Side Story",
+            "id": 448825,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 6.5,
+            "popularity": 7.08,
+            "vote_count": 17,
+            "release_date": "2009-01-27",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants: Spongicus",
+            "genre_ids": [
+                16,
+                35,
+                14,
+                10751
+            ],
+            "poster_path": "/zyL7QGngIRKigzumIXcAr2gwp8D.jpg",
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Spongicus",
+            "id": 281649,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 6.8,
+            "popularity": 7.532,
+            "overview": "",
+            "release_date": "2010-01-06",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants: Viking-sized Adventures",
+            "genre_ids": [
+                16,
+                10751
+            ],
+            "vote_count": 8,
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Viking-sized Adventures",
+            "poster_path": "/lyyt28Tbuq8IGsPRfEamYRngXMR.jpg",
+            "id": 296559,
+            "video": true
+        },
+        {
+            "vote_average": 7.7,
+            "popularity": 6.718,
+            "overview": "",
+            "release_date": "2019-12-07",
+            "adult": false,
+            "backdrop_path": "/hznC6fqTDStjn6vQKZBcaoehby1.jpg",
+            "title": "The SpongeBob Musical: Live on Stage!",
+            "genre_ids": [
+                10751,
+                10402,
+                35
+            ],
+            "vote_count": 14,
+            "original_language": "en",
+            "original_title": "The SpongeBob Musical: Live on Stage!",
+            "poster_path": "/pbhA6MorVpzWozMgGKLpdyBn8vE.jpg",
+            "id": 651985,
+            "video": false
+        },
+        {
+            "vote_average": 7.3,
+            "popularity": 6.76,
+            "vote_count": 6,
+            "release_date": "2017-09-22",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "Spongebob Squarepants: Factory Fresh",
+            "genre_ids": [
+                16
+            ],
+            "poster_path": "/h1Buh7MNozlF8IS2UxufePDj3uH.jpg",
+            "original_language": "en",
+            "original_title": "Spongebob Squarepants: Factory Fresh",
+            "id": 476537,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 10,
+            "popularity": 6.27,
+            "vote_count": 2,
+            "release_date": "2016-03-11",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants: Glove World Forever",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "poster_path": "/f1sy5zB4cHGCv3vXM13FyoErmbR.jpg",
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Glove World Forever",
+            "id": 440353,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 8,
+            "popularity": 11.496,
+            "overview": "",
+            "release_date": "2003-09-30",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob Squarepants: Christmas",
+            "genre_ids": [
+                16
+            ],
+            "vote_count": 10,
+            "original_language": "en",
+            "original_title": "SpongeBob Squarepants: Christmas",
+            "poster_path": "/8IYzzycC2sYDbhEZwsOcZZVIlxN.jpg",
+            "id": 336978,
+            "video": true
+        },
+        {
+            "vote_average": 6.6,
+            "popularity": 14.442,
+            "vote_count": 4,
+            "release_date": "2014-11-07",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "Bob Esponja - A Bolha de Grude",
+            "genre_ids": [
+                16
+            ],
+            "poster_path": "/dCNXcscr8dGBEN781chdOs20E3P.jpg",
+            "original_language": "en",
+            "original_title": "Spongebob Squarepants: It Came from Goo Lagoon",
+            "id": 303110,
+            "overview": "Fenda do Biquíni está sendo invadida... e só Bob Esponja e seus amigos podem salvar a cidade! Junte-se a eles para escapar de uma bolha de grude gigante e vermelha, um malvado Jellien Overlord, alguns búzios aterrorizantes, um horrível ouriço do mar, um par de vilões malvados e muito mais!",
+            "video": true
+        },
+        {
+            "vote_average": 8,
+            "popularity": 3.265,
+            "overview": "",
+            "release_date": "2013-11-17",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants: Extreme Kah-Rah-Tay",
+            "genre_ids": [],
+            "vote_count": 5,
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Extreme Kah-Rah-Tay",
+            "poster_path": null,
+            "id": 289137,
+            "video": true
+        },
+        {
+            "vote_average": 7,
+            "popularity": 5.649,
+            "vote_count": 6,
+            "release_date": "2007-04-28",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob's Atlantis SquarePantis",
+            "genre_ids": [
+                16,
+                10751
+            ],
+            "poster_path": "/xgWybpuOmz1tblxCAXOUmsoNVkD.jpg",
+            "original_language": "en",
+            "original_title": "SpongeBob's Atlantis SquarePantis",
+            "id": 336975,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 6.4,
+            "popularity": 3.8,
+            "vote_count": 6,
+            "release_date": "1999-04-26",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "Bob Esponja Jogos no Fundo do Mar",
+            "genre_ids": [
+                16
+            ],
+            "poster_path": null,
+            "original_language": "en",
+            "original_title": "Spongebob Squarepants: Deep-Sea Games",
+            "id": 299702,
+            "overview": "Comecem os jogos! Bob Esponja e Patrick estão na melhor forma esportiva, quando tentam entrar no maior time de esportes radicais de Fenda do Bikini, Os Drasticals! Então, vai ser emoção sem parar, com uma competição de fast-food, kah-rah-tay com Bob Esponja e Sandy, golfe, caçando água-viva, uma corrida de demolição, estrelando “Squish”, e muito mais, nesta coleção com lugar na primeira fileira de toda a ação.",
+            "video": true
+        },
+        {
+            "vote_average": 7.5,
+            "popularity": 1.813,
+            "vote_count": 2,
+            "release_date": "2019-07-12",
+            "adult": false,
+            "backdrop_path": "/ryvSBQla5HefgMQUGRnOWaaessh.jpg",
+            "title": "SpongeBob's Big Birthday Blowout",
+            "genre_ids": [
+                16
+            ],
+            "id": 658118,
+            "original_language": "en",
+            "original_title": "SpongeBob's Big Birthday Blowout",
+            "poster_path": "/uR6h5EJZhOhZKbkYFO3nLPVCt4C.jpg",
+            "overview": "",
+            "video": false
+        },
+        {
+            "vote_average": 7,
+            "popularity": 2.843,
+            "vote_count": 9,
+            "release_date": "2010-07-13",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "SpongeBob SquarePants: Triton's Revenge",
+            "genre_ids": [
+                16,
+                35,
+                10751
+            ],
+            "poster_path": null,
+            "original_language": "en",
+            "original_title": "SpongeBob SquarePants: Triton's Revenge",
+            "id": 300173,
+            "overview": "",
+            "video": true
+        },
+        {
+            "vote_average": 0,
+            "popularity": 1.764,
+            "vote_count": 0,
+            "release_date": "2013-02-07",
+            "adult": false,
+            "backdrop_path": null,
+            "title": "Spongebob Squarepants: Disorder In The Deep",
+            "genre_ids": [],
+            "poster_path": "/5ZTSolmsuarw3rdS9AgdGxPCeOF.jpg",
+            "original_language": "en",
+            "original_title": "Spongebob Squarepants: Disorder In The Deep",
+            "id": 419179,
+            "overview": "",
+            "video": true
+        }
+    ],
+    "total_results": 53,
+    "total_pages": 3,
+    "page": 1
+}

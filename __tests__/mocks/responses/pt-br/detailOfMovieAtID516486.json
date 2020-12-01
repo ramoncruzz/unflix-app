@@ -1,0 +1,88 @@
+{
+    "adult": false,
+    "backdrop_path": "/xXBnM6uSTk6qqCf0SRZKXcga9Ba.jpg",
+    "belongs_to_collection": null,
+    "budget": 50300000,
+    "genres": [
+        {
+            "id": 10752,
+            "name": "Guerra"
+        },
+        {
+            "id": 28,
+            "name": "Ação"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        }
+    ],
+    "homepage": "https://tv.apple.com/movie/greyhound/umc.cmc.o5z5ztufuu3uv8lx7m0jcega",
+    "id": 516486,
+    "imdb_id": "tt6048922",
+    "original_language": "en",
+    "original_title": "Greyhound",
+    "overview": "Em Greyhound: Na Mira do Inimigo, o comboio internacional de 37 navios aliados liderado pelo capitão Ernest Krause (Tom Hanks), que está em seu primeiro comando de destróier norte-americano, atravessa o temido Atlântico Norte e precisa enfrentar a perseguição por matilhas de submarinos nazistas.",
+    "popularity": 309.951,
+    "poster_path": "/el7iWlogQ4Mv6A0qvBn4ZyxHGiW.jpg",
+    "production_companies": [
+        {
+            "id": 4171,
+            "logo_path": "/ip8rzankhLLhJGGkvfCirfUM26d.png",
+            "name": "Playtone",
+            "origin_country": "US"
+        },
+        {
+            "id": 13240,
+            "logo_path": "/aTc07YaNHo8WNgkQSnvLmG6w4nW.png",
+            "name": "Bron Studios",
+            "origin_country": "CA"
+        },
+        {
+            "id": 7493,
+            "logo_path": "/452FO4LcI6lA6bfgl6w1kQYRBlr.png",
+            "name": "FilmNation Entertainment",
+            "origin_country": "US"
+        },
+        {
+            "id": 14319,
+            "logo_path": "/z5jJhK1AMbr47CLVqsB4HpIBtHd.png",
+            "name": "Sycamore Pictures",
+            "origin_country": "US"
+        },
+        {
+            "id": 5,
+            "logo_path": "/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
+            "name": "Columbia Pictures",
+            "origin_country": "US"
+        },
+        {
+            "id": 34,
+            "logo_path": "/GagSvqWlyPdkFHMfQ3pNq6ix9P.png",
+            "name": "Sony Pictures",
+            "origin_country": "US"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2020-07-10",
+    "revenue": 0,
+    "runtime": 91,
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "A única coisa mais perigosa do que as linhas de frente foi a luta para chegar lá",
+    "title": "Greyhound - Na Mira do Inimigo",
+    "video": false,
+    "vote_average": 7.5,
+    "vote_count": 1394
+}
