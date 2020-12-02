@@ -1,4 +1,4 @@
-import {genre, movie, category} from './types'
+import {genre, movie, category} from '../../utils/types'
 
 export const groupByGenre = (listGenre: Array<genre>, listMovies: Array<movie>): Array<any> => {
     
