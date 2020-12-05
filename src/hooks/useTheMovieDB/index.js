@@ -5,13 +5,8 @@ import {
   searchMovie, trending
 } from '../../services/Themoviedb.api';
 
-import  genresMock from './mocks/genres'
-import  discoverMock from './mocks/discover'
-
-const groupByGenre = (listGenre = genresMock.genres, listMovies = discoverMock.results) => {
-  const listaGeneros = listGenre
-  const listaFilmes = listMovies
-  debugger;
+const groupByGenre = (listGenre , listMovies ) => {
+  
   // eslint-disable-next-line no-underscore-dangle
   const _moviesByGenre = [];
   listGenre.forEach((genreItem) => {
@@ -28,7 +23,6 @@ const groupByGenre = (listGenre = genresMock.genres, listMovies = discoverMock.r
       });
     }
   });
-  debugger;
   return _moviesByGenre;
 };
 
@@ -78,13 +72,12 @@ const useTheMovieDB = (idMovie = 0) => {
   }, [pageTrends]);
 
   useEffect(() => {
-    // setMoviesByGenre(groupByGenre(genreList, moviesList));
-    groupByGenre()
+    setMoviesByGenre(groupByGenre(genreList, moviesList));
   }, [moviesList]);
 
-  // useEffect(() => {
-  //   setTrendOfWeekByGenre(groupByGenre(genreList, trendsOfWeek));
-  // }, [trendsOfWeek]);
+  useEffect(() => {
+    setTrendOfWeekByGenre(groupByGenre(genreList, trendsOfWeek));
+  }, [trendsOfWeek]);
 
   useEffect(() => {
     searchMovie(termSearch)
