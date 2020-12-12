@@ -47,17 +47,17 @@ const interceptorRequest = async (config) => {
     throw new Error(error.message);
   }
 };
-const interceptorSuccess = (response) => {
-  try {
-    const { data } = response;
-    return data;
-  } catch (error) {
-    console.log(error);
-    throw new Error(error.message);
-  }
-};
+// const interceptorSuccess = (response) => {
+//   try {
+//     const { data } = response;
+//     return data;
+//   } catch (error) {
+//     console.log(error);
+//     throw new Error(error.message);
+//   }
+// };
 
 TheMovieDB.interceptors.request.use(interceptorRequest);
-TheMovieDB.interceptors.response.use(interceptorSuccess);
+// TheMovieDB.interceptors.response.use(interceptorSuccess);
 
 export default TheMovieDB;
