@@ -25,7 +25,7 @@ const useTheMovieDB = (idMovie = 0) => {
   const [trendsOfWeekByGenre, setTrendOfWeekByGenre] = useState<
     Array<category>
   >([]);
-  const [movieDetail, setMovieDetail] = useState(null);
+  const [movieDetail, setMovieDetail] = useState<movie>();
   const [movieId, setMovieId] = useState(idMovie === 0 ? 400160 : idMovie);
   const [page, setPage] = useState(1);
   const [pageTrends, setPageTrends] = useState(1);
@@ -95,13 +95,13 @@ const useTheMovieDB = (idMovie = 0) => {
   //     .catch((error) => console.log(error));
   // }, [termSearch]);
 
-  // useEffect(() => {
-  //   movieDetailEndPoint(movieId)
-  //     .then((_movie) => {
-  //       setMovieDetail(_movie);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, [movieId]);
+  useEffect(() => {
+    movieDetailEndPoint(movieId)
+      .then((_movie) => {
+        setMovieDetail(_movie);
+      })
+      .catch((error) => console.log(error));
+  }, [movieId]);
 
   return {
     movies: moviesList,

@@ -7,10 +7,10 @@ import {
 } from '../utils/types';
 
 const movieDetail = (id: number) =>
-  new Promise((resolve, reject) => {
+  new Promise<movie>((resolve, reject) => {
     service
       .get<movie>(`/movie/${id}`)
-      .then((movie) => resolve(movie))
+      .then((response) => resolve(response.data))
       .catch((erro) => reject(erro));
   });
 
