@@ -3,22 +3,15 @@ import {
   discover,
   genre,
   movieDetail as movieDetailEndPoint,
-  searchMovie,
   trending,
 } from '../../services/Themoviedb.api';
 
 import { groupByGenre, filterNewMovies, createGenresMap } from './util';
-import {
-  genre as genreType,
-  movie,
-  category,
-  movieResponse,
-} from '../../utils/types';
+import { genre as genreType, movie, category } from '../../utils/types';
 
 const useTheMovieDB = (idMovie = 0) => {
   const [moviesList, setMoviesList] = useState<Array<movie>>([]);
   const [moviesByGenre, setMoviesByGenre] = useState<Array<category>>([]);
-  const [genreList, setGenreList] = useState<Array<genreType>>([]);
   const [termSearch, setTermSearch] = useState(null);
   const [searchResult, setSearchResult] = useState([]);
   const [trendsOfWeek, setTrendOfWeek] = useState<Array<movie>>([]);
