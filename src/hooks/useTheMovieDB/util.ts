@@ -6,11 +6,6 @@ export const groupByGenre = (
 ): Array<category> => {
   const _moviesByGenre = Array<category>();
 
-  type itemMap = {
-    id: number;
-    name: string;
-  };
-
   if (!!mapGenres) {
     mapGenres.forEach((value) => {
       const { id, name } = JSON.parse(JSON.stringify(value));

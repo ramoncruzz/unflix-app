@@ -1,24 +1,29 @@
 import useTheMovieDB from '../../hooks/useTheMovieDB';
-import { genre, movie } from '../../utils/types';
-import discoverMock from './mocks/discover';
+import { genre, movie, movieResponse } from '../../utils/types';
+import { page1, page2 } from './mocks/discover';
 import genresMock from './mocks/genres';
 import moviesOrderedByGenres from './mocks/moviesOrderedByGenres';
-import { groupByGenre } from './util';
+import { groupByGenre, filterNewMovies } from './util';
 
-describe('Unit test of hook useTheMovieDB', () => {
-  it('should get unordered list of movies', () => {
-    expect(3).toEqual(3);
-  });
-  it('should get list of movies ordered by categories', () => {
-    const listOfMovies = discoverMock.results;
-    const listOfGenres = genresMock.genres;
-    const genresMap = new Map();
+describe('Unit test of util functions', () => {
+  let listOfMoviesPage1 = page1.results;
+  let listOfMoviesPage2 = page2.results;
+  let listOfGenres = genresMock.genres;
+  const genresMap = new Map();
+
+  beforeAll(() => {
+    listOfMoviesPage1 = page1.results;
+    listOfGenres = genresMock.genres;
 
     listOfGenres.forEach((value, index) => {
       genresMap.set(index, value);
     });
-
-    const listMoviesOrderedByGenres = groupByGenre(genresMap, listOfMovies);
+  });
+  it('should get list of movies ordered by categories', () => {
+    const listMoviesOrderedByGenres = groupByGenre(
+      genresMap,
+      listOfMoviesPage1
+    );
     expect(moviesOrderedByGenres.length).toEqual(
       listMoviesOrderedByGenres.length
     );
@@ -35,7 +40,7 @@ describe('Unit test of hook useTheMovieDB', () => {
     };
 
     const newListOfGenres = Object.create(listOfGenres);
-    const newListMovies = Object.create(listOfMovies);
+    const newListMovies = Object.create(listOfMoviesPage1);
 
     newListMovies.push(newMovie);
     newListOfGenres.push(newGenre);
@@ -58,8 +63,50 @@ describe('Unit test of hook useTheMovieDB', () => {
       (item) => item.title === 'New Category'
     );
     expect(newCategoryInnerList.data.length).toEqual(1);
+  });
 
-    // const { moviesByGenre } = useTheMovieDB();
+  it('should filter new movies when it is necessary', () => {
+    const moviesResponsePage1: movieResponse = {
+      page: 1,
+      results: listOfMoviesPage1,
+      total_pages: 2,
+      total_results: 40,
+    };
+
+    const moviesResponsePage2: movieResponse = {
+      page: 2,
+      results: listOfMoviesPage2,
+      total_pages: 2,
+      total_results: 40,
+    };
+    const moviesWhenThereAreNotMoviesYeat = filterNewMovies(
+      genresMap,
+      moviesResponsePage1,
+      []
+    );
+
+    const moviesWhenPage1IsCalledAgain = filterNewMovies(
+      genresMap,
+      moviesResponsePage1,
+      listOfMoviesPage1
+    );
+
+    const moviesWhenPage2isCalled = filterNewMovies(
+      genresMap,
+      moviesResponsePage2,
+      listOfMoviesPage1
+    );
+
+    expect(moviesWhenThereAreNotMoviesYeat.length).toEqual(20);
+    expect(moviesWhenPage1IsCalledAgain.length).toEqual(0);
+    expect(moviesWhenPage2isCalled.length).toEqual(20);
+  });
+});
+
+describe('Unit test of hook useTheMovieDB', () => {
+  beforeEach(() => {});
+  it('should get unordered list of movies', () => {
+    expect(3).toEqual(3);
   });
 
   it('should get list of movies filtered by name of movie', () => {
