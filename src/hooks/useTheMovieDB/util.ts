@@ -1,10 +1,4 @@
-import {
-  genre,
-  movie,
-  category,
-  movieResponse,
-  genreType,
-} from '../../utils/types';
+import { genre, movie, category, movieResponse } from '../../utils/types';
 
 export const groupByGenre = (
   mapGenres?: Map<number, string>,
@@ -33,7 +27,7 @@ export const groupByGenre = (
 };
 
 export const createGenresMap = (
-  listOfGenrer: Array<genreType>
+  listOfGenrer: Array<genre>
 ): Map<number, string> => {
   const _genresMap = new Map<number, string>();
 

@@ -12,8 +12,17 @@ describe('Unit test of hook useTheMovieDB', () => {
   it('should get list of movies ordered by categories', () => {
     const listOfMovies = discoverMock.results;
     const listOfGenres = genresMock.genres;
-    const listMoviesOrderedByGenres = groupByGenre(listOfGenres, listOfMovies);
-    expect(moviesOrderedByGenres).toEqual(listMoviesOrderedByGenres);
+    const genresMap = new Map();
+
+    listOfGenres.forEach((value, index) => {
+      genresMap.set(index, value);
+    });
+
+    const listMoviesOrderedByGenres = groupByGenre(genresMap, listOfMovies);
+
+    expect(moviesOrderedByGenres.length).toEqual(
+      listMoviesOrderedByGenres.length
+    );
 
     const newMovie: movie = {
       id: 2020202,
