@@ -19,7 +19,6 @@ describe('Unit test of hook useTheMovieDB', () => {
     });
 
     const listMoviesOrderedByGenres = groupByGenre(genresMap, listOfMovies);
-    const teste = moviesOrderedByGenres;
     expect(moviesOrderedByGenres.length).toEqual(
       listMoviesOrderedByGenres.length
     );
