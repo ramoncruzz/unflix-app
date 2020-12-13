@@ -1,3 +1,5 @@
+import { renderHook } from '@testing-library/react-hooks';
+import { act } from 'react-test-renderer';
 import useTheMovieDB from '../../hooks/useTheMovieDB';
 import { genre, movie, movieResponse } from '../../utils/types';
 import { page1, page2 } from './mocks/discover';
@@ -104,8 +106,40 @@ describe('Unit test of util functions', () => {
 });
 
 describe('Unit test of hook useTheMovieDB', () => {
-  beforeEach(() => {});
-  it('should get unordered list of movies', () => {
+  // let _useTheMovieDB;
+  beforeEach(() => {
+    // _useTheMovieDB = useTheMovieDB();
+    // const discover = jest.fn();
+  });
+  it('should get unordered list of movies', async () => {
+    const hookTheMovieDB = Object.assign(useTheMovieDB);
+
+    // hookTheMovieDB.bind({
+    //   discover: () => page1.results,
+    // });
+
+    const discover = jest.fn();
+
+    const { result, waitForNextUpdate } = renderHook(() => hookTheMovieDB());
+
+    // hookTheMovieDB.bind({
+    //   discover: () => page1.results,
+    //   genre: () => [],
+    //   movieDetail: () => {},
+    //   trending: () => [],
+    //   searchMovie: () => [],
+    // });
+
+    result.current.setPage(1);
+    await waitForNextUpdate();
+    const movies = result.current.movies;
+    // const discover = jest.fn();
+
+    // const testJest = jest
+    //   .spyOn(hookTheMovieDB, 'discover')
+    //   .mockImplementation(() => []);
+    // hookTheMovieDB.movies;
+    // expect(testJest).toHaveBeenCalled();
     expect(3).toEqual(3);
   });
 

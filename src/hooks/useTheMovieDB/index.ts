@@ -124,6 +124,7 @@ const useTheMovieDB = (idMovie = 0) => {
     setTrendOfWeekByGenre(groupByGenre(genresMap, trendsOfWeek));
   }, [trendsOfWeek]);
 
+  const testFunc = () => {};
   return {
     movies: moviesList,
     movieDetail,

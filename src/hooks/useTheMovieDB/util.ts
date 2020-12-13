@@ -27,6 +27,20 @@ export const groupByGenre = (
   return _moviesByGenre;
 };
 
+export const createGenresMap = (
+  listOfGenrer: Array<genre>
+): Map<number, string> => {
+  const _genresMap = new Map<number, string>();
+
+  listOfGenrer.reduce((obj, item) => {
+    const { name, id } = item;
+    obj.set(id, name);
+    return obj;
+  }, _genresMap);
+
+  return _genresMap;
+};
+
 export const filterNewMovies = (
   _genresMap: Map<number, string>,
   _movieResponse: movieResponse,
