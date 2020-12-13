@@ -10,7 +10,10 @@ const movieDetail = (id: number) =>
   new Promise<movie>((resolve, reject) => {
     service
       .get<movie>(`/movie/${id}`)
-      .then((response) => resolve(response.data))
+      .then((response) => {
+        console.log(`Detalhe do id ${id} buscado`);
+        resolve(response.data);
+      })
       .catch((error) => reject(error));
   });
 
@@ -23,6 +26,7 @@ const discover = (page: number) =>
         },
       })
       .then((response) => {
+        console.log(`Pagina ${page} chamada!`);
         resolve(response.data);
       })
       .catch((error) => {

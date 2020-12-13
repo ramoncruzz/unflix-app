@@ -92,13 +92,13 @@ const useTheMovieDB = (idMovie = 0) => {
     () =>
       new Promise<movie>(async (resolve, reject) => {
         try {
-          const _movie = await movieDetailEndPoint(idMovie);
+          const _movie = await movieDetailEndPoint(movieId);
           resolve(_movie);
         } catch (error) {
           reject(error);
         }
       }),
-    [idMovie]
+    [movieId]
   );
 
   useEffect(() => {
