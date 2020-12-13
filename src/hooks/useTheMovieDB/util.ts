@@ -5,9 +5,15 @@ export const groupByGenre = (
   listMovies: Array<movie> = []
 ): Array<category> => {
   const _moviesByGenre = Array<category>();
+
+  type itemMap = {
+    id: number;
+    name: string;
+  };
+
   if (!!mapGenres) {
-    mapGenres.forEach((value, key) => {
-      const [id, name] = [key, value];
+    mapGenres.forEach((value) => {
+      const { id, name } = JSON.parse(JSON.stringify(value));
       const data = listMovies.filter((movie) => {
         const { genre_ids: genreIds } = movie;
         return (genreIds || []).some((item: number) => item === id);
@@ -24,20 +30,6 @@ export const groupByGenre = (
   }
 
   return _moviesByGenre;
-};
-
-export const createGenresMap = (
-  listOfGenrer: Array<genre>
-): Map<number, string> => {
-  const _genresMap = new Map<number, string>();
-
-  listOfGenrer.reduce((obj, item) => {
-    const { name, id } = item;
-    obj.set(id, name);
-    return obj;
-  }, _genresMap);
-
-  return _genresMap;
 };
 
 export const filterNewMovies = (

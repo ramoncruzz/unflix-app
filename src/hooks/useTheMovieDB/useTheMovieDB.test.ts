@@ -19,7 +19,7 @@ describe('Unit test of hook useTheMovieDB', () => {
     });
 
     const listMoviesOrderedByGenres = groupByGenre(genresMap, listOfMovies);
-
+    const teste = moviesOrderedByGenres;
     expect(moviesOrderedByGenres.length).toEqual(
       listMoviesOrderedByGenres.length
     );
@@ -60,7 +60,7 @@ describe('Unit test of hook useTheMovieDB', () => {
     );
     expect(newCategoryInnerList.data.length).toEqual(1);
 
-    const { moviesByGenre } = useTheMovieDB();
+    // const { moviesByGenre } = useTheMovieDB();
   });
 
   it('should get list of movies filtered by name of movie', () => {
