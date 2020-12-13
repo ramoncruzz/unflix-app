@@ -11,7 +11,7 @@ const movieDetail = (id: number) =>
     service
       .get<movie>(`/movie/${id}`)
       .then((response) => resolve(response.data))
-      .catch((erro) => reject(erro));
+      .catch((error) => reject(error));
   });
 
 const discover = (page: number) =>
@@ -30,6 +30,19 @@ const discover = (page: number) =>
       });
   });
 
+const searchMovie = (movieName: string, page: number) =>
+  new Promise<movieResponse>((resolve, reject) => {
+    service
+      .get<movieResponse>('/search/movie', {
+        params: {
+          query: movieName,
+          page,
+        },
+      })
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error));
+  });
+
 const trending = (page: number) =>
   new Promise<movieResponse>((resolve, reject) => {
     service
@@ -46,19 +59,6 @@ const genre = () =>
         console.log(`/genre chamada`);
         resolve(response.data.genres);
       })
-      .catch((error) => reject(error));
-  });
-
-//TODO mudar respostas desse metodo para informar as paginas. Serão necessárias para o sistema de cache
-const searchMovie = (movieName: string) =>
-  new Promise((resolve, reject) => {
-    service
-      .get<movieResponse>('/search/movie', {
-        params: {
-          query: movieName,
-        },
-      })
-      .then((response) => resolve(response.data.results))
       .catch((error) => reject(error));
   });
 
