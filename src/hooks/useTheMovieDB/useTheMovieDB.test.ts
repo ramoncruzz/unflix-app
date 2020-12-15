@@ -1,11 +1,22 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-test-renderer';
 import useTheMovieDB from '../../hooks/useTheMovieDB';
-import { genre, movie, movieResponse } from '../../utils/types';
+import { movie, genre as genreType, movieResponse } from '../../utils/types';
 import { page1, page2 } from './mocks/discover';
 import genresMock from './mocks/genres';
 import moviesOrderedByGenres from './mocks/moviesOrderedByGenres';
 import { groupByGenre, filterNewMovies } from './util';
+
+jest.mock('../../services/Themoviedb.api', () => {
+  const { page1 } = require('./mocks/discover');
+  const mockMovies = { ...page1, results: page1.results.slice(0, 4) };
+  return {
+    discover: () => Promise.resolve(mockMovies),
+    genre: () => Promise.resolve([]),
+    movieDetail: () => {},
+    trending: () => [],
+    searchMovie: () => [],
+  };
+});
 
 describe('Unit test of util functions', () => {
   let listOfMoviesPage1 = page1.results;
@@ -36,7 +47,7 @@ describe('Unit test of util functions', () => {
       genre_ids: [3030],
     };
 
-    const newGenre: genre = {
+    const newGenre: genreType = {
       id: 3030,
       name: 'New Category',
     };
@@ -114,32 +125,19 @@ describe('Unit test of hook useTheMovieDB', () => {
   it('should get unordered list of movies', async () => {
     const hookTheMovieDB = Object.assign(useTheMovieDB);
 
-    // hookTheMovieDB.bind({
-    //   discover: () => page1.results,
-    // });
+    const mockMovieResponse: movieResponse = {
+      page: 0,
+      results: page1.results.slice(0, 3),
+      total_pages: 1,
+      total_results: 3,
+    };
 
-    const discover = jest.fn();
+    const testingLibraryReturn = renderHook(() => hookTheMovieDB());
+    const { result, waitForNextUpdate } = testingLibraryReturn;
 
-    const { result, waitForNextUpdate } = renderHook(() => hookTheMovieDB());
-
-    // hookTheMovieDB.bind({
-    //   discover: () => page1.results,
-    //   genre: () => [],
-    //   movieDetail: () => {},
-    //   trending: () => [],
-    //   searchMovie: () => [],
-    // });
-
-    result.current.setPage(1);
     await waitForNextUpdate();
     const movies = result.current.movies;
-    // const discover = jest.fn();
 
-    // const testJest = jest
-    //   .spyOn(hookTheMovieDB, 'discover')
-    //   .mockImplementation(() => []);
-    // hookTheMovieDB.movies;
-    // expect(testJest).toHaveBeenCalled();
     expect(3).toEqual(3);
   });
 
